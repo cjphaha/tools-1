@@ -218,7 +218,7 @@ func doReformat(filePath string) error {
 			} else {
 				// imports of the third projects
 				importsSegment := strings.Split(importKey, "/")
-				project := strings.Join(importsSegment[:3], "/")
+				project := strings.Join(importsSegment[:len(importsSegment) - 1], "/")
 				cacheImports(thirdImports, project, orgImportPkg)
 			}
 		}
